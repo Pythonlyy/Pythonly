@@ -303,3 +303,25 @@ html {
   margin-top: 3rem; /* or adjust to taste */
   padding: 1rem;
 }
+
+.project-filters {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.filter-btn {
+  background-color: #111;
+  border: 1px solid #39ff14;
+  color: #39ff14;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border-radius: 5px;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: #39ff14;
+  color: #000;
+}
