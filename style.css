@@ -159,47 +159,61 @@ html {
 }
 
 
-/* Mobile Styles */
-@media screen and (max-width: 768px) {
+/* ========== MOBILE-ONLY STYLES ========== */
+@media (max-width: 768px) {
+  .nav-container {
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   .hamburger {
     display: block;
-  }
-
-  .hero h1 {
-    font-size: 1.7rem;
-  }
-
-   .hero p,
-  .about p,
-  .project-card p {
-    font-size: 0.95rem;
+    font-size: 28px;
+    color: #00ffe1;
+    cursor: pointer;
+    z-index: 1001;
   }
 
   .nav-links {
-    flex-direction: column;
+    display: none;
     position: absolute;
     top: 60px;
     right: 0;
-    background: #0d0d0d;
     width: 100%;
-    display: none;
-    padding: 10px 20px;
+    background: #0d0d0d;
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+    border-top: 1px solid #111;
+    z-index: 1000;
   }
 
+  .nav-links a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1.1rem;
+    padding: 10px 0;
+    color: #00ffe1;
+    border-bottom: 1px solid #1a1a1a;
+  }
+
+  .nav-links a:hover {
+    color: #fff;
+  }
 
   .nav-links.active {
     display: flex;
   }
 
-  .nav-links a {
-    padding: 10px 0;
-    border-top: 1px solid #222;
-  }
-
-   .nav-links.active {
-    display: flex;
+  .nav-icon {
+    width: 20px;
+    margin-right: 10px;
   }
 }
+
 
 .nav a {
   position: relative;
