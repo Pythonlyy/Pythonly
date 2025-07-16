@@ -165,14 +165,38 @@ html {
     display: block;
   }
 
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+
+   .hero p,
+  .about p,
+  .project-card p {
+    font-size: 0.95rem;
+  }
+
   .nav-links {
-  display: inline-flex;
-  align-items: center;
-  gap: 10rem; /* You can adjust this (e.g. 2rem, 3rem, 4rem) */
-}
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #0d0d0d;
+    width: 100%;
+    display: none;
+    padding: 10px 20px;
+  }
 
 
   .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 10px 0;
+    border-top: 1px solid #222;
+  }
+
+   .nav-links.active {
     display: flex;
   }
 }
