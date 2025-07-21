@@ -385,5 +385,20 @@ html {
   color: #000;
 }
 
+.video-banner {
+  position: fixed;           /* stays fixed at top */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;               /* behind other content */
+  overflow: hidden;
+}
 
+.video-banner video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;         /* fills screen without distortion */
+  display: block;
+}
 

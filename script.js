@@ -4,12 +4,12 @@ function toggleMenu() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  // 🔹 Filter Buttons for Project Categories
   const filterButtons = document.querySelectorAll(".filter-btn");
   const projectCards = document.querySelectorAll(".project-card");
 
   filterButtons.forEach(button => {
     button.addEventListener("click", () => {
-      // Set active class
       filterButtons.forEach(btn => btn.classList.remove("active"));
       button.classList.add("active");
 
@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       projectCards.forEach(card => {
         const categories = card.getAttribute("data-category").split(" ");
-
         const isVisible =
           selectedCategory === "all" || categories.includes(selectedCategory);
 
@@ -25,4 +24,24 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+
+  // 🔹 Loop Last 4 Seconds of Video Banner
+  const video = document.getElementById("introVideo");
+
+  if (video) {
+    let shouldLoopTail = false;
+
+    video.addEventListener("ended", () => {
+      shouldLoopTail = true;
+      video.currentTime = video.duration - 14;
+      video.play();
+    });
+
+    video.addEventListener("timeupdate", () => {
+      if (shouldLoopTail && video.currentTime >= video.duration - 0.1) {
+        video.currentTime = video.duration - 14;
+        video.play();
+      }
+    });
+  }
 });
