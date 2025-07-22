@@ -25,22 +25,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 🔹 Loop Last 4 Seconds of Video Banner
-  const video = document.getElementById("introVideoDesktop");
+  // 🔹 Loop Last 4 Seconds of the Active Video Banner
+  const desktopVideo = document.getElementById("introVideoDesktop");
+  const mobileVideo = document.getElementById("introVideoMobile");
 
-  if (video) {
+  const isMobile = window.innerWidth <= 768;
+  const activeVideo = isMobile ? mobileVideo : desktopVideo;
+
+  if (activeVideo) {
     let shouldLoopTail = false;
 
-    video.addEventListener("ended", () => {
+    activeVideo.addEventListener("ended", () => {
       shouldLoopTail = true;
-      video.currentTime = video.duration - 23;
-      video.play();
+      activeVideo.currentTime = activeVideo.duration - 4;
+      activeVideo.play();
     });
 
-    video.addEventListener("timeupdate", () => {
-      if (shouldLoopTail && video.currentTime >= video.duration - 0.1) {
-        video.currentTime = video.duration - 23;
-        video.play();
+    activeVideo.addEventListener("timeupdate", () => {
+      if (shouldLoopTail && activeVideo.currentTime >= activeVideo.duration - 0.1) {
+        activeVideo.currentTime = activeVideo.duration - 4;
+        activeVideo.play();
       }
     });
   }
