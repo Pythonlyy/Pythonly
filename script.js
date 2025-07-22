@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // 🔹 Loop Last 4 Seconds of Video Banner
-  const video = document.getElementById("introVideo");
+  const video = document.getElementById("introVideoDesktop");
 
   if (video) {
     let shouldLoopTail = false;
