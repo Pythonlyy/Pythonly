@@ -235,6 +235,13 @@ html {
     width: 20px;
     margin-right: 10px;
   }
+
+  .banner-desktop {
+    display: none;
+  }
+  .banner-mobile {
+    display: block;
+  }
 }
 
 
@@ -408,3 +415,10 @@ html {
   display: block;
 }
 
+.video-banner {
+  display: block;
+}
+
+.banner-mobile {
+  display: none;
+}
