@@ -37,13 +37,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     activeVideo.addEventListener("ended", () => {
       shouldLoopTail = true;
-      activeVideo.currentTime = activeVideo.duration - 4;
+      activeVideo.currentTime = activeVideo.duration - 23;
       activeVideo.play();
     });
 
     activeVideo.addEventListener("timeupdate", () => {
       if (shouldLoopTail && activeVideo.currentTime >= activeVideo.duration - 0.1) {
-        activeVideo.currentTime = activeVideo.duration - 4;
+        activeVideo.currentTime = activeVideo.duration - 23;
         activeVideo.play();
       }
     });
